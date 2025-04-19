@@ -1,0 +1,6 @@
+2025-04-19 14:24:01,197 [   2013]   WARN - #c.i.i.s.p.i.BundledSharedIndexProvider - Bundled shared index is not found at: /snap/intellij-idea-community/598/jdk-shared-indexes
+2025-04-19 14:24:04,240 [   5056]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-04-19 14:24:04,921 [   5737]   WARN - #o.j.i.maven - MavenProjectsTree is inconsistent
+2025-04-19 14:24:04,973 [   5789]   WARN - #o.j.i.maven - updateAllMavenProjects started: incremental=false, MavenProjectsManager.onProjectStartup suporteos
+2025-04-19 14:24:06,783 [   7599]   WARN - #c.i.o.a.i.ActionUpdater - 6161 ms total to grab EDT 5 times to expand ToolWindowHeader$2#expandGroup@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2). Use `ActionUpdateThread.BGT`.
+2025-04-19 14:24:15,988 [  16804]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=false, MavenProjectsManager.onProjectStartup suporteos

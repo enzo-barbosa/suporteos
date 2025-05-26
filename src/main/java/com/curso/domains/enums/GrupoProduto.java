@@ -22,8 +22,10 @@ public class GrupoProduto {
     @NotBlank // Define que o atributo não pode ter somente espaços em branco (tem que ter algum conteúde dentro)
     private String descricao;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "grupoproduto")
+    @JsonIgnore // Impede que o atributo produtos seja serializado quando o objeto GrupoProduto for convertido em Json
+    @OneToMany(mappedBy = "grupoProduto") // Define que um objeto da classe(GrupoProduto) pode estar associado a muitos objetos de outra classe (Produto)
+    // O parâmetro mappedBy indica que o lado dono do relacionamento está na classe produto, no campo grupoProduto. Isso é, Produto tem uma referência ao
+    // GrupoProduto, e essa chave estrangeira é usada para mapear o relacionamento
     private List<Produto> produtos = new ArrayList<>();
 
     @Enumerated(EnumType.ORDINAL) // Define que o atributo status será gravado no banco 0 ou 1 (INATIVO ou ATIVO)

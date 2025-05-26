@@ -1,9 +1,12 @@
 package com.curso.domains.enums;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -18,6 +21,10 @@ public class GrupoProduto {
     @NotNull // Define que o atributo não pode ser nulo
     @NotBlank // Define que o atributo não pode ter somente espaços em branco (tem que ter algum conteúde dentro)
     private String descricao;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "grupoproduto")
+    private List<Produto> produtos = new ArrayList<>();
 
     @Enumerated(EnumType.ORDINAL) // Define que o atributo status será gravado no banco 0 ou 1 (INATIVO ou ATIVO)
     @JoinColumn(name = "status") // Define o nome do campo no banco que irá receber o valor ordinal do Enum
@@ -47,6 +54,14 @@ public class GrupoProduto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     public Status getStatus() {

@@ -24,9 +24,15 @@ public class ProdutoResource {
         return ResponseEntity.ok().body(produtoService.findAll());
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}") //exemplo - http://localhost:8080/produto/1
     public ResponseEntity<ProdutoDTO> findById(@PathVariable Long id) {
         Produto obj = this.produtoService.findbyId(id);
+        return ResponseEntity.ok().body(new ProdutoDTO(obj));
+    }
+
+    @GetMapping(value = "/codigobarra/{codigoBarra}") //exemplo - http://localhost:8080/produto/codigobarra/1111
+    public ResponseEntity<ProdutoDTO> findByCodigoBarra(@PathVariable String codigoBarra) {
+        Produto obj = this.produtoService.findbyCodigoBarra(codigoBarra);
         return ResponseEntity.ok().body(new ProdutoDTO(obj));
     }
 }

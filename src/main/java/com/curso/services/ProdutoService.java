@@ -27,4 +27,9 @@ public class ProdutoService {
         Optional<Produto> obj = produtoRepo.findById(id);
         return obj.orElse(null);
     }
+
+    public Produto findbyCodigoBarra(String codigoBarra) {
+        Optional<Produto> obj = produtoRepo.findByCodigoBarra(codigoBarra);
+        return obj.orElse(null);
+    }
 }

@@ -1,9 +1,9 @@
 package com.curso.services;
 
-import com.curso.domains.dtos.GrupoProdutoDTO;
 import com.curso.domains.dtos.ProdutoDTO;
 import com.curso.domains.enums.Produto;
 import com.curso.repositories.ProdutoRepository;
+import com.curso.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,11 +25,11 @@ public class ProdutoService {
 
     public Produto findbyId(Long id) {
         Optional<Produto> obj = produtoRepo.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow (() -> new ObjectNotFoundException("Produto não encontrado! Id:" + id));
     }
 
     public Produto findbyCodigoBarra(String codigoBarra) {
         Optional<Produto> obj = produtoRepo.findByCodigoBarra(codigoBarra);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Produto não encontrado! Código de Barra:" + codigoBarra));
     }
 }

@@ -5,12 +5,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class GrupoProdutoDTO {
-    private int id;
+    private Integer id;
 
     @NotNull // Define que o atributo não pode ser nulo
     @NotBlank // Define que o atributo não pode ter somente espaços em branco (tem que ter algum conteúde dentro)
     private String descricao;
-    private int status;
+    private Integer status;
 
     public GrupoProdutoDTO() {
     }
@@ -21,11 +21,11 @@ public class GrupoProdutoDTO {
         this.status = grupoProduto.getStatus().getId();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

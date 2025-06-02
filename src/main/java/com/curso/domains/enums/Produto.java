@@ -16,7 +16,7 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
-    private long idProduto;
+    private Long idProduto;
 
     @NotBlank
     @NotNull
@@ -57,7 +57,7 @@ public class Produto {
         this.status = Status.ATIVO; // Define que quando gerar um novo produto ele será ATIVO
     }
 
-    public Produto(long idProduto,String codigoBarra, String descricao, BigDecimal saldoEstoque, BigDecimal valorUnitario, LocalDate dataCadastro, GrupoProduto grupoProduto, Status status) {
+    public Produto(Long idProduto,String codigoBarra, String descricao, BigDecimal saldoEstoque, BigDecimal valorUnitario, LocalDate dataCadastro, GrupoProduto grupoProduto, Status status) {
         this.idProduto = idProduto;
         this.codigoBarra = codigoBarra;
         this.descricao = descricao;
@@ -71,11 +71,11 @@ public class Produto {
         this.valorEstoque = saldoEstoque != null ? saldoEstoque.multiply(valorUnitario) : BigDecimal.ZERO; // Calcula o valor total do estoque (saldo * unitário) ou ZERO se saldo for nulo
     }
 
-    public long getIdProduto() {
+    public Long getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(long idProduto) {
+    public void setIdProduto(Long idProduto) {
         this.idProduto = idProduto;
     }
 

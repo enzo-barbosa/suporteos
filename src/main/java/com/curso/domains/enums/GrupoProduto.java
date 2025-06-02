@@ -16,7 +16,7 @@ public class GrupoProduto {
 
     @Id // Define o atributo identificador da classe
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_grupoproduto") // Define a estratégia de geração de chave no banco
-    private int id;
+    private Integer id;
 
     @NotNull // Define que o atributo não pode ser nulo
     @NotBlank // Define que o atributo não pode ter somente espaços em branco (tem que ter algum conteúde dentro)
@@ -36,17 +36,17 @@ public class GrupoProduto {
         this.status = Status.ATIVO; // Define que quando gerar um novo grupoproduto ele será ATIVO
     }
 
-    public GrupoProduto(int id, String descricao, Status status) {
+    public GrupoProduto(Integer id, String descricao, Status status) {
         this.id = id;
         this.descricao = descricao;
         this.status = status;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
